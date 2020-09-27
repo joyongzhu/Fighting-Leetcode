@@ -30,3 +30,11 @@
 *.exe
 *.out
 *.app
+
+#VS 2019
+*.sln
+*.vcxproj*
+## debug file
+*.tlog
+*.exe.recipe
+*.log
