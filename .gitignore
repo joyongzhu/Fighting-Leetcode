@@ -31,6 +31,9 @@
 *.out
 *.app
 
+# vs code
+.vscode
+
 #VS 2019
 *.sln
 *.vcxproj*
