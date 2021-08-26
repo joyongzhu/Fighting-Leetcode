@@ -4,6 +4,14 @@
  * [2] 两数相加
  */
 
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode() : val(0), next(nullptr) {}
+    ListNode(int x) : val(x), next(nullptr) {}
+    ListNode(int x, ListNode *next) : val(x), next(next) {}
+};
+
 // @lc code=start
 /**
  * Definition for singly-linked list.
@@ -107,3 +115,32 @@ public:
     }
 };
 // @lc code=end
+
+
+ListNode* createlistnode(std::vector<int>& vec)
+{
+    ListNode* result = new ListNode;
+    ListNode* tt = result;
+
+    for (size_t i = 0; i < vec.size(); i++) {
+        tt->val = vec[i];
+        tt->next = NULL;
+        std::cout << vec[i] << std::endl;
+        if (i + 1 != vec.size()) {
+            tt->next = new ListNode;
+            tt = tt->next;
+        }
+    }
+
+    return result;
+}
+int main()
+{
+    std::vector<int> v_L1 = {9, 9, 9, 9, 9, 9, 9};
+    std::vector<int> v_L2 = {9, 9, 9, 9};
+
+    Solution solu;
+    solu.addTwoNumbers(createlistnode(v_L1), createlistnode(v_L2));
+
+    return 0;
+}
